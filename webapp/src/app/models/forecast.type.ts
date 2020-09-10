@@ -1,6 +1,9 @@
-import { Moment } from 'moment';
-
 export interface Forecast {
-  date: Moment;
+  date: Date;
   temperatureC: number;
+  climate: string;
+  iconUrl: string;
+  humidityPercentage: number;
+  visibility: number;
+  uvIndex: number;
 }

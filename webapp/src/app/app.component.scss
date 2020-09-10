@@ -1,0 +1,15 @@
+.container {
+  display: grid;
+  grid-template-columns: 1fr max-content 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+
+.main-view {
+  grid-column: 2 / span 1;
+  grid-row: 2 / span 1;
+}
+
+.secondary-view {
+  grid-column: 2 / span 1;
+  grid-row: 3 / span 1;
+}

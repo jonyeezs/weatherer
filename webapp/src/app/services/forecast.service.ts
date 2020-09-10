@@ -9,6 +9,11 @@ import * as moment from 'moment';
 interface GetResponse {
   dateUTC: string;
   temperatureC: number;
+  climate: string;
+  iconUrl: string;
+  humidityPercentage: number;
+  visibility: number;
+  uvIndex: number;
 }
 
 @Injectable({
@@ -24,8 +29,8 @@ export class ForecastService {
       .get<GetResponse>(`${environment.apiUrl}/${this.apiPath}`)
       .pipe(
         map<GetResponse, Forecast>((v) => ({
-          date: moment(v.dateUTC),
-          temperatureC: v.temperatureC,
+          ...v,
+          date: new Date(v.dateUTC),
         }))
       );
   }

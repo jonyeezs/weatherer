@@ -1,4 +1,31 @@
-<h1>Weatherer</h1>
-<pre>
-  {{ currentWeather$ | async | json }}
-</pre>
+<div class="container">
+  <ng-container *ngIf="currentWeather$ | async as weather">
+    <div class="main-view">
+      <h1>{{ weather.temperatureC }}°</h1>
+      <div>
+        <h2>Brisbane</h2>
+        <h3>
+          <span>{{ weather.date }}</span>
+        </h3>
+      </div>
+      <div>
+        <img [src]="weather.iconUrl" />
+        <div>{{ weather.climate }}</div>
+      </div>
+    </div>
+    <div class="secondary-view">
+      <div>
+        <div>{{ weather.humidityPercentage }}%</div>
+        <div>Humidity</div>
+      </div>
+      <div>
+        <div>{{ weather.visibility }}mi</div>
+        <div>Visibility</div>
+      </div>
+      <div>
+        <div>Low {{ weather.uvIndex }}</div>
+        <div>UV Index</div>
+      </div>
+    </div>
+  </ng-container>
+</div>
