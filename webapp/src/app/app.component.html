@@ -1,6 +1,6 @@
-<div class="container">
+<div class="view">
   <ng-container *ngIf="currentWeather$ | async as weather">
-    <div class="main-view">
+    <div class="main-view flex justify-around">
       <h1>{{ weather.temperatureC }}°</h1>
       <div>
         <h2>Brisbane</h2>
