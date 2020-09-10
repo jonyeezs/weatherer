@@ -5,6 +5,6 @@ namespace weatherer.Interfaces
 {
     public interface IForecastRetrievable
     {
-        public Task<Forecast> GetCurrentAsync();
+        public Task<Weather> GetCurrentAsync();
     }
 }

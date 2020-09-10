@@ -20,7 +20,7 @@ namespace weatherer.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<Forecast>> Get()
+        public async Task<ActionResult<Weather>> Get()
         {
             return await this._forecastRetriever.GetCurrentAsync();
         }

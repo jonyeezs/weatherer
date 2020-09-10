@@ -2,7 +2,7 @@ using System;
 
 namespace weatherer.Models
 {
-    public class Forecast
+    public class Weather
     {
         public DateTimeOffset DateUTC { get; private set; }
         public int TemperatureC
@@ -14,7 +14,7 @@ namespace weatherer.Models
         public int Visibility { get; private set; }
         public int UVIndex { get; private set; }
 
-        public Forecast(DateTimeOffset date, int temperature, string climate, 
+        public Weather(DateTimeOffset date, int temperature, string climate,
             int humidityPercentage, int visibility, int UVIndex)
         {
             this.DateUTC = date;

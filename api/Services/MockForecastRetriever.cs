@@ -7,9 +7,9 @@ namespace weatherer.Services
 {
     public class MockForecastRetriever : IForecastRetrievable
     {
-        public Task<Forecast> GetCurrentAsync()
+        public Task<Weather> GetCurrentAsync()
         {
-            return Task.FromResult(new Forecast(DateTime.UtcNow, 23, "sunny", 68, 4, 0));
+            return Task.FromResult(new Weather(DateTime.UtcNow, 23, "sunny", 68, 4, 0));
         }
     }
 }
