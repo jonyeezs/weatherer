@@ -7,6 +7,36 @@
 .main-view {
   grid-column: 2 / span 1;
   grid-row: 2 / span 1;
+
+  &__container {
+    height: min-content;
+  }
+}
+
+.summary {
+  display: grid;
+  grid-template-columns: min-content max-content max-content;
+  grid-template-rows: auto;
+  &__temp {
+    grid-column: 1 / span 1;
+    grid-row: 1 / span 2;
+  }
+  &__loc {
+    grid-column: 2 / span 1;
+    grid-row: 1 / span 1;
+  }
+  &__date {
+    grid-column: 2 / span 1;
+    grid-row: 2 / span 1;
+  }
+  &__icon {
+    grid-column: 3 / span 1;
+    grid-row: 1 / span 1;
+  }
+  &__climate {
+    grid-column: 3 / span 1;
+    grid-row: 2 / span 1;
+  }
 }
 
 .secondary-view {

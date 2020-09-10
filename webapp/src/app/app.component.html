@@ -1,19 +1,19 @@
-<div class="view">
+<div class="view bg-gray-600 h-screen text-white">
   <ng-container *ngIf="currentWeather$ | async as weather">
-    <div class="main-view flex justify-around">
-      <h1>{{ weather.temperatureC }}°</h1>
-      <div>
-        <h2>Brisbane</h2>
-        <h3>
-          <span>{{ weather.date }}</span>
+    <div class="main-view flex justify-center items-center">
+      <div class="summary">
+        <h1 class="summary__temp text-6xl">{{ weather.temperatureC }}°</h1>
+        <h2 class="summary__loc self-end text-2xl">Brisbane</h2>
+        <h3 class="summary__date self-start text-gray-400 text-tiny">
+          {{ weather.date }}
         </h3>
-      </div>
-      <div>
-        <img [src]="weather.iconUrl" />
-        <div>{{ weather.climate }}</div>
+        <img class="summary__icon self-end" [src]="weather.iconUrl" />
+        <div class="summary__climate self-start text-tiny">
+          {{ weather.climate }}
+        </div>
       </div>
     </div>
-    <div class="secondary-view">
+    <div class="secondary-view flex justify-center">
       <div>
         <div>{{ weather.humidityPercentage }}%</div>
         <div>Humidity</div>
