@@ -9,7 +9,7 @@ namespace weatherer.Services
     {
         public Task<Forecast> GetCurrentAsync()
         {
-            return Task.FromResult(new Forecast(DateTime.UtcNow, 23));
+            return Task.FromResult(new Forecast(DateTime.UtcNow, 23, "sunny", 68, 4, 0));
         }
     }
 }
