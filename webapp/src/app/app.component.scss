@@ -2,6 +2,9 @@
   display: grid;
   grid-template-columns: 1fr max-content 1fr;
   grid-template-rows: 1fr 1fr 1fr;
+
+  background: url("/assets/cloudy-bg.jpeg") no-repeat center center fixed;
+  background-size: cover;
 }
 
 .main-view {
@@ -17,6 +20,8 @@
   display: grid;
   grid-template-columns: min-content max-content max-content;
   grid-template-rows: auto;
+  column-gap: 8px;
+
   &__temp {
     grid-column: 1 / span 1;
     grid-row: 1 / span 2;
@@ -42,4 +47,6 @@
 .secondary-view {
   grid-column: 2 / span 1;
   grid-row: 3 / span 1;
+
+  margin-bottom: 20%;
 }

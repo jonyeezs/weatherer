@@ -5,26 +5,31 @@
         <h1 class="summary__temp text-6xl">{{ weather.temperatureC }}°</h1>
         <h2 class="summary__loc self-end text-2xl">Brisbane</h2>
         <h3 class="summary__date self-start text-gray-400 text-tiny">
-          {{ weather.date }}
+          {{ weather.date | amDateFormat: "hh:mm • dddd DD MMM 'YY" }}
         </h3>
-        <img class="summary__icon self-end" [src]="weather.iconUrl" />
+        <img
+          class="summary__icon self-end justify-self-center"
+          [src]="weather.iconUrl"
+        />
         <div class="summary__climate self-start text-tiny">
           {{ weather.climate }}
         </div>
       </div>
     </div>
-    <div class="secondary-view flex justify-center">
-      <div>
-        <div>{{ weather.humidityPercentage }}%</div>
-        <div>Humidity</div>
+    <div class="secondary-view flex justify-evenly justify-center self-end">
+      <div class="flex flex-col items-center">
+        <div class="text-gray-400 text-xl">
+          {{ weather.humidityPercentage }}%
+        </div>
+        <div class="text-gray-200 text-tiny">Humidity</div>
       </div>
-      <div>
-        <div>{{ weather.visibility }}mi</div>
-        <div>Visibility</div>
+      <div class="flex flex-col items-center">
+        <div class="text-gray-400 text-xl">{{ weather.visibility }}mi</div>
+        <div class="text-gray-200 text-tiny">Visibility</div>
       </div>
-      <div>
-        <div>Low {{ weather.uvIndex }}</div>
-        <div>UV Index</div>
+      <div class="flex flex-col items-center">
+        <div class="text-gray-400 text-xl">Low {{ weather.uvIndex }}</div>
+        <div class="text-gray-200 text-tiny">UV Index</div>
       </div>
     </div>
   </ng-container>

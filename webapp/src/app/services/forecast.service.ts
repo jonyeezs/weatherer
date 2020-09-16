@@ -4,7 +4,6 @@ import { Forecast } from '../models/forecast.type';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
-import * as moment from 'moment';
 
 interface GetResponse {
   dateUTC: string;
