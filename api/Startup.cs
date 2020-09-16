@@ -26,7 +26,7 @@ namespace weatherer
                 options.AddPolicy(name: "DeveloperOrigins",
                                   builder =>
                                   {
-                                      builder.WithOrigins("http://localhost:4200");
+                                      builder.WithOrigins("*");
                                   });
             });
             services.AddControllers();

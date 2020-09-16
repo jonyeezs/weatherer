@@ -5,6 +5,9 @@
             "label": "build",
             "command": "dotnet",
             "type": "process",
+            "options": {
+                "cwd": "${workspaceFolder}/api"
+            },
             "args": [
                 "build",
                 "${workspaceFolder}/api/weatherer.csproj",
@@ -17,6 +20,9 @@
             "label": "publish",
             "command": "dotnet",
             "type": "process",
+            "options": {
+                "cwd": "${workspaceFolder}/api"
+            },
             "args": [
                 "publish",
                 "${workspaceFolder}/api/weatherer.csproj",
@@ -29,6 +35,9 @@
             "label": "watch",
             "command": "dotnet",
             "type": "process",
+            "options": {
+                "cwd": "${workspaceFolder}/api"
+            },
             "args": [
                 "watch",
                 "run",
@@ -37,6 +46,14 @@
                 "/consoleloggerparameters:NoSummary"
             ],
             "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "start",
+            "command": "npm start",
+            "type": "shell",
+            "options": {
+                "cwd": "${workspaceFolder}/webapp"
+            }
         }
     ]
 }
