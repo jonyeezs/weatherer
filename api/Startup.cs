@@ -4,6 +4,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using weatherer.Interfaces;
+using weatherer.Libraries.OpenWeather;
 using weatherer.Services;
 
 namespace weatherer
@@ -29,8 +30,14 @@ namespace weatherer
                                   });
             });
             services.AddControllers();
+            services.AddHttpClient();
 
-            services.AddSingleton<IForecastRetrievable, MockForecastRetriever>();
+            // Add OpenWeather
+            services.Configure<OpenWeatherSettings>(Configuration.GetSection("OpenWeather"));
+            services.AddHttpClient<IOpenWeatherClient, OpenWeatherClient>();
+
+
+            services.AddSingleton<IForecastRetrievable, OpenWeatherForecastRetriever>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
